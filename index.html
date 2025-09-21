@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GreenTrail Hiking Club — friendly hikes, local trails, and nature stewardship." />
+  <title>GreenTrail Hiking Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="GreenTrail Home">
+        <svg class="logo" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2l8 8-8 12L4 10l8-8z" fill="currentColor" opacity="0.85"/>
+          <path d="M12 6l5 5-5 9-5-9 5-5z" fill="currentColor" opacity="0.35"/>
+        </svg>
+        <span>GreenTrail</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="sr-only">Toggle navigation</span>
+          ☰
+        </button>
+        <ul id="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="themeToggle" class="btn outline small" aria-label="Toggle dark mode">🌓</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Find your trail. Find your people.</h1>
+          <p>GreenTrail is a friendly hiking club that explores local trails every weekend. All levels welcome —
+             come for the views, stay for the community.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Join the club</a>
+            <a class="btn ghost" href="#events">Upcoming hikes</a>
+          </div>
+          <ul class="badges" aria-label="Club highlights">
+            <li>🚶‍♀️ Beginner‑friendly</li>
+            <li>🧭 Certified guides</li>
+            <li>🌿 Stewardship events</li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 600 400" class="illustration">
+            <defs>
+              <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="var(--accent-500)" />
+                <stop offset="100%" stop-color="var(--accent-700)" />
+              </linearGradient>
+            </defs>
+            <rect width="600" height="400" rx="24" fill="var(--surface-200)"/>
+            <circle cx="480" cy="90" r="42" fill="var(--accent-400)"/>
+            <path d="M40 320 L140 160 L220 300 L280 210 L360 330 L420 260 L520 340 L560 320" 
+                  stroke="url(#grad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <circle cx="140" cy="160" r="10" fill="var(--accent-500)"/>
+            <circle cx="280" cy="210" r="10" fill="var(--accent-500)"/>
+            <circle cx="420" cy="260" r="10" fill="var(--accent-500)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">What we do</h2>
+        <div class="cards three">
+          <article class="card">
+            <h3>Weekend Hikes</h3>
+            <p>Explore nearby trails with friendly groups led by experienced volunteers. We rotate locations and difficulty.</p>
+          </article>
+          <article class="card">
+            <h3>Trail Stewardship</h3>
+            <p>Give back to nature through monthly cleanup and maintenance days in partnership with local parks.</p>
+          </article>
+          <article class="card">
+            <h3>Skill Workshops</h3>
+            <p>Learn map reading, Leave No Trace, and safety basics in short, practical sessions before or after hikes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Upcoming hikes</h2>
+          <div class="filters" role="group" aria-label="Filter by difficulty">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="easy">Easy</button>
+            <button class="chip" data-filter="moderate">Moderate</button>
+            <button class="chip" data-filter="hard">Hard</button>
+          </div>
+        </div>
+
+        <div class="cards three" id="eventList">
+          <article class="card event" data-difficulty="easy">
+            <div class="event-date">Sep 28</div>
+            <h3>Lakeside Loop</h3>
+            <p>Flat, shaded path around the reservoir with viewpoints and picnic spots.</p>
+            <div class="tags"><span class="tag easy">Easy</span><span class="tag morning">Morning</span></div>
+          </article>
+
+          <article class="card event" data-difficulty="moderate">
+            <div class="event-date">Oct 5</div>
+            <h3>Redwood Ridge</h3>
+            <p>Rolling terrain through towering redwoods — great for intermediate hikers.</p>
+            <div class="tags"><span class="tag moderate">Moderate</span><span class="tag forest">Forest</span></div>
+          </article>
+
+          <article class="card event" data-difficulty="hard">
+            <div class="event-date">Oct 12</div>
+            <h3>Granite Peak</h3>
+            <p>Steep ascent with big views — bring water and trekking poles.</p>
+            <div class="tags"><span class="tag hard">Hard</span><span class="tag summit">Summit</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-grid">
+          <img src="https://picsum.photos/seed/hike1/600/400" alt="Sunlit trail through a forest" />
+          <img src="https://picsum.photos/seed/hike2/600/400" alt="Group of hikers on a ridge" />
+          <img src="https://picsum.photos/seed/hike3/600/400" alt="Wildflowers in a meadow" />
+          <img src="https://picsum.photos/seed/hike4/600/400" alt="Waterfall along the path" />
+          <img src="https://picsum.photos/seed/hike5/600/400" alt="Lake reflecting mountains at dusk" />
+          <img src="https://picsum.photos/seed/hike6/600/400" alt="Trail sign pointing to peaks" />
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <div class="accordion" id="faqList">
+          <details>
+            <summary>Do I need prior hiking experience?</summary>
+            <p>Nope! We plan beginner‑friendly routes every month. Start with our Easy hikes.</p>
+          </details>
+          <details>
+            <summary>What should I bring?</summary>
+            <p>Water, snacks, comfortable shoes, sun protection, and layers. We'll note any special gear in the event listing.</p>
+          </details>
+          <details>
+            <summary>Are dogs allowed?</summary>
+            <p>Many trails allow dogs on leash. Check the event description or ask in our chat before you bring a pup.</p>
+          </details>
+          <details>
+            <summary>How do I join?</summary>
+            <p>Fill out the contact form below. We’ll email a welcome pack with tips and our group chat invite.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <h2 class="section-title">Get in touch</h2>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your full name" />
+            <span class="error" id="nameError" role="alert"></span>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            <span class="error" id="emailError" role="alert"></span>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Tell us what you’re looking for"></textarea>
+            <span class="error" id="messageError" role="alert"></span>
+          </div>
+          <div class="form-row checkbox">
+            <input id="terms" name="terms" type="checkbox" required />
+            <label for="terms">I agree to the community guidelines.</label>
+            <span class="error" id="termsError" role="alert"></span>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send message</button>
+            <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>GreenTrail Hiking Club</strong>
+        <p class="muted">Hike kindly. Leave no trace. Make friends.</p>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="Email">✉️</a>
+        <a href="#" aria-label="Instagram">📸</a>
+        <a href="#" aria-label="Maps">🗺️</a>
+      </div>
+      <p class="muted small">© <span id="year"></span> GreenTrail. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>
